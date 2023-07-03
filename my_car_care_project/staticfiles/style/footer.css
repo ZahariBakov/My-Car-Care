@@ -1,0 +1,47 @@
+footer {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-left {
+  flex: 1;
+}
+
+.footer-right {
+  flex: 1;
+}
+
+h3 {
+  color: #333;
+  font-size: 18px;
+}
+
+p {
+  color: #777;
+  margin-bottom: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  background-color: #ddd;
+  padding: 10px;
+  text-align: center;
+}
