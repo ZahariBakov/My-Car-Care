@@ -11,25 +11,22 @@
 </head>
 <body>
 <nav>
-   <div class="Items">
-       <h2>Logo</h2>
-       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Vehicles</a></li>
-        <li><button>Join us</button></li>
-        <li><button>LOG IN</button></li>
-    </ul>
-   </div>
+    <div class="nav-left"><h2>Logo</h2></div>
+    <div class="nav-right">
+        <ul>
+            <li><a href="#">Car</a></li>
+            <li><a href="#">Photo</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
+        </ul>
+    </div>
 </nav>
 
 <hr>
 
 <main>
-    <h1>Home page</h1>
-
-    <p>
-        This is the home page and this is main part
-    </p>
+    {% block content %}
+    {% endblock %}
 </main>
 
 <hr>

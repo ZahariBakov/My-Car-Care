@@ -26,7 +26,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'my_car_care_project.main.urls',
+    'my_car_care_project.car',
+    'my_car_care_project.maintenance',
+    'my_car_care_project.accounts',
+    'my_car_care_project.photo',
 ]
 
 MIDDLEWARE = [

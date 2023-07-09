@@ -3,47 +3,18 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
 }
 
-.Items {
+.nav-left {
+  margin: 8px;
+}
+
+.nav-right ul {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.Items h2 {
-  margin-right: 20px;
-  font-size: 50px;
-}
-
-.Items ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-.Items ul li {
-  margin-left: 10px;
-}
-
-.Items ul li:first-child {
-  margin-left: auto;
-}
-
-.Items ul li a,
-.Items ul li button {
-  text-decoration: none;
-  color: #333;
-  font-size: 30px;
-  padding: 10px 15px;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.Items ul li a:hover,
-.Items ul li button:hover {
-  color: #777;
+.nav-right li {
+  margin: 12px;
 }

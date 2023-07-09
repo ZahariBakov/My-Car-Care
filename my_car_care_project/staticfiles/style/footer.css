@@ -27,12 +27,13 @@ p {
 }
 
 ul {
+  display: flex;
+  align-items: center;
   list-style: none;
-  padding: 0;
 }
 
 ul li {
-  margin-bottom: 5px;
+  margin: 12px;
 }
 
 ul li a {
