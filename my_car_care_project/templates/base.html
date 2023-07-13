@@ -11,13 +11,53 @@
 </head>
 <body>
 <nav>
-    <div class="nav-left"><h2>My Car Care</h2></div>
+    <div class="nav-left">
+        <h2>My Car Care</h2>
+
+        {% if request.user.is_authenticated %}
+            <p>Hello, {{ request.user }}</p>
+        {% endif %}
+    </div>
     <div class="nav-right">
         <ul>
-            <li><a href="#">Car</a></li>
-            <li><a href="#">Photo</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li>
+            <li>
+                <a href="#">
+                    <i>Car</i>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i>Photo</i>
+                </a>
+            </li>
+
+            {% if request.user.is_authenticated %}
+                <li>
+                    <a href="#">
+                        <i>Profile</i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'logout user' %}">
+                        <i>Logout</i>
+                    </a>
+                </li>
+
+            {% else %}
+                <li>
+                    <a href="{% url 'login user' %}">
+                        <i>Login</i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'register user' %}">
+                        <i>Register</i>
+                    </a>
+                </li>
+            {% endif %}
         </ul>
     </div>
 </nav>

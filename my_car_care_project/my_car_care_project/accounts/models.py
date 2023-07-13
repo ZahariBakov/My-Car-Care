@@ -2,9 +2,7 @@ from django.core import validators
 from django.db import models
 from django.contrib.auth import models as auth_models
 
-
-def validate_only_alphabetical(value):
-    pass
+from my_car_care_project.accounts.validators import validate_only_alphabetical
 
 
 class Profile(auth_models.AbstractUser):
