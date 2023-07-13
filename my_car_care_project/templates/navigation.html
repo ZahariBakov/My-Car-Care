@@ -1,0 +1,60 @@
+<nav>
+    <div class="nav-left">
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">
+                    <h2>My Car Care</h2>
+                </a>
+            </li>
+
+            <li>
+                {% if request.user.is_authenticated %}
+                    <p>Hello, {{ request.user }}</p>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+
+    <div class="nav-right">
+        <ul>
+            <li>
+                <a href="#">
+                    <i>Car</i>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i>Photo</i>
+                </a>
+            </li>
+
+            {% if request.user.is_authenticated %}
+                <li>
+                    <a href="#">
+                        <i>Profile</i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'logout user' %}">
+                        <i>Logout</i>
+                    </a>
+                </li>
+
+            {% else %}
+                <li>
+                    <a href="{% url 'login user' %}">
+                        <i>Login</i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'register user' %}">
+                        <i>Register</i>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

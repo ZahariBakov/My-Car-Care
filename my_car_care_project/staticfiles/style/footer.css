@@ -1,5 +1,7 @@
+
 footer {
-  background-color: #f5f5f5;
+  background-color: #fff;
+  color: #333;
   padding: 20px;
 }
 
@@ -8,41 +10,17 @@ footer {
   justify-content: space-between;
 }
 
-.footer-left {
-  flex: 1;
+.footer-content h3 {
+  margin: 0;
 }
 
-.footer-right {
-  flex: 1;
-}
-
-h3 {
-  color: #333;
-  font-size: 18px;
-}
-
-p {
-  color: #777;
-  margin-bottom: 5px;
-}
-
-ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-}
-
-ul li {
-  margin: 12px;
-}
-
-ul li a {
-  color: #333;
-  text-decoration: none;
+.footer-left p,
+.footer-right p {
+  margin: 5px 0;
 }
 
 .footer-bottom {
-  background-color: #ddd;
+  background-color: #f5f5f5;
   padding: 10px;
   text-align: center;
 }

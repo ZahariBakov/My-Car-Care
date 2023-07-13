@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load forms %}
+
+{% block content %}
+    <h1>Register page</h1>
+
+    <form action="{% url 'register user' %}" method="post">
+        <p>username: {{ form.username|placeholder:'Username' }}</p>
+        <p>email: {{ form.email|placeholder:'Email' }}</p>
+        <p>password: {{ form.password1|placeholder:'Password' }}</p>
+        <p>repeat password: {{ form.password2|placeholder:'Repeat password' }}</p>
+        {% csrf_token %}
+
+        <button type="submit">Register</button>
+    </form>
+{% endblock %}

@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
+{% load forms %}
 
 {% block content %}
     <h1>Login page</h1>
 
     <div class="first-option">
         <form action="{% url 'login user' %}" method="post">
-            {{ form.as_p }}
+            <p>username: {{ form.username|placeholder:'Enter username:' }}</p>
+            <p>password: {{ form.password|placeholder:'Enter password:' }}</p>
 
             <input type="hidden" value="{{ next }}" name="next"/>
 
@@ -16,6 +18,6 @@
     </div>
 
     <div class="second-option">
-        <p>Don't have account? <a href="{% url 'register user' %}">Register</a></p>
+        <p>Don't have account? <a href="{% url 'register user' %}?next={{ next }}">Register</a></p>
     </div>
 {% endblock %}
