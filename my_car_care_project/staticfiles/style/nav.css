@@ -39,6 +39,29 @@ nav {
 }
 
 .nav-right li a {
-  color: #333;
   text-decoration: none;
 }
+
+/* Стилизация на бутоните в навигационата лента */
+.nav-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.nav-button:hover {
+  background-color: #555;
+}
+
+.nav-button:active {
+  background-color: #222;
+}
+
+.nav-button:focus {
+  outline: none;
+  box-shadow: 0 0 3px #fff;
+}
+

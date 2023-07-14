@@ -1,9 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Home page</h1>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Car Care</h1>
+            <p>Your reliable partner for car maintenance</p>
+            <a href="#" class="btn-primary">Learn More</a>
+        </div>
+    </section>
 
-<p>
-    This is the home page and this is main part
-</p>
+    <section class="features">
+        <div class="feature">
+            <i class="fas fa-wrench"></i>
+            <h2>Quality Service</h2>
+            <p>We provide high-quality car maintenance services that will ensure your safe and comfortable journey.</p>
+        </div>
+
+        <div class="feature">
+            <i class="fas fa-clock"></i>
+            <h2>Fast Processing</h2>
+            <p>We employ modern and efficient methods that guarantee fast and reliable processing of your car.</p>
+        </div>
+
+        <div class="feature">
+            <i class="fas fa-money-bill"></i>
+            <h2>Competitive Prices</h2>
 {% endblock %}

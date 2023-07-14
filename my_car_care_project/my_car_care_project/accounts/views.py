@@ -1,8 +1,10 @@
+from django.templatetags.static import static
 from django.urls import reverse_lazy
 from django.views import generic as views
-from django.contrib.auth import views as auth_view, login
-
+from django.contrib.auth import views as auth_view, login, get_user_model
 from my_car_care_project.accounts.forms import RegisterUserForm
+
+UserModel = get_user_model()
 
 
 class RegisterUserView(views.CreateView):
@@ -32,3 +34,28 @@ class LoginUserView(auth_view.LoginView):
 
 class LogoutUserView(auth_view.LogoutView):
     pass
+
+
+class ProfileDetailsView(views.DetailView):
+    template_name = 'accounts/profile-details-page.html'
+    model = UserModel
+
+    def get_context_data(self, **kwargs):
+        profile_image = static('images/person_img.png')
+
+        if self.object.profile_picture is not None:
+            profile_image = self.object.profile_picture
+
+        context = super().get_context_data(**kwargs)
+
+        context['profile_image'] = profile_image
+
+        return context
+
+
+class ProfileEditView(views.UpdateView):
+    template_name = 'accounts/profile-edit.html'
+
+
+class ProfileDeleteView(views.DeleteView):
+    template_name = 'accounts/profile-delete.html'
