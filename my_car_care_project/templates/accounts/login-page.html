@@ -1,23 +1,25 @@
 {% extends 'base.html' %}
-{% load forms %}
+{% load placeholder_tag %}
 
 {% block content %}
-    <h1>Login page</h1>
+    <div class="login_wrapper">
+        <div class="login-option">
+            <h1>Login page</h1>
 
-    <div class="first-option">
-        <form action="{% url 'login user' %}" method="post">
-            <p>username: {{ form.username|placeholder:'Enter username:' }}</p>
-            <p>password: {{ form.password|placeholder:'Enter password:' }}</p>
+            <form action="{% url 'login user' %}" method="post">
+                <p>username: {{ form.username|placeholder:'Enter username:' }}</p>
+                <p>password: {{ form.password|placeholder:'Enter password:' }}</p>
 
-            <input type="hidden" value="{{ next }}" name="next"/>
+                <input type="hidden" value="{{ next }}" name="next"/>
 
-            {% csrf_token %}
+                {% csrf_token %}
 
-            <button type="submit">Log in</button>
-        </form>
-    </div>
+                <button type="submit">Log in</button>
+            </form>
+        </div>
 
-    <div class="second-option">
-        <p>Don't have account? <a href="{% url 'register user' %}?next={{ next }}">Register</a></p>
+        <div class="register-option">
+            <p>Don't have account? <a href="{% url 'register user' %}?next={{ next }}">Register</a></p>
+        </div>
     </div>
 {% endblock %}

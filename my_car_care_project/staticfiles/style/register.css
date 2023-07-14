@@ -1,0 +1,24 @@
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-wrapper form {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+}
+
+.register-wrapper p {
+  margin: 10px 0;
+}
+
+.register-wrapper button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
