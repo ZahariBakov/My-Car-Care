@@ -3,5 +3,14 @@
 {% block content %}
     <h2>Your Car Page</h2>
 
+    {% for car in cars %}
+        <p class="current-car">
+            <a href="{% url 'car details' car_id=car.id %}">{{ car }}</a>
+        </p>
+    {% empty %}
+        <p class="no-cars">No cars added yet.</p>
+    {% endfor %}
+
+
     <a href="{% url 'car add' %}" class="btn-primary">Add Car</a>
 {% endblock %}
