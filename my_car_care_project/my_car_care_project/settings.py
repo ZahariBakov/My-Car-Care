@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'my_car_care_project.car',
     'my_car_care_project.maintenance',
     'my_car_care_project.accounts',
-    'my_car_care_project.photo',
+    'my_car_care_project.repairs',
     'my_car_care_project.common',
 ]
 

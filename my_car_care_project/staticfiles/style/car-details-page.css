@@ -1,0 +1,43 @@
+/* car-details-page.css */
+
+.car-details {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.car-details .car-info {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.car-details .car-brand,
+.car-details .car-model,
+.car-details .car-year {
+  margin-bottom: 5px;
+}
+
+.repair-history {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.repair-history .repair-history {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.repair-history .repair-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.repair-history .repair-element {
+  margin-bottom: 5px;
+}
+
+.no-repair {
+  color: #999;
+  font-style: italic;
+}

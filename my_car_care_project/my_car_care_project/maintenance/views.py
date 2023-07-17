@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from my_car_care_project.maintenance.models import Maintenance
 
-# Create your views here.
+
+def maintenance_page(request):
+    maintenance = Maintenance.objects.all()
+    context = {'maintenance': maintenance}
+    return render(request, 'maintenance/maintenance-page.html', context)

@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.views import generic as views
 from my_car_care_project.car.forms import CarAddForm
 from my_car_care_project.car.models import Car
+from my_car_care_project.repairs.models import Repair
 
 
 class CarPageView(LoginRequiredMixin, views.TemplateView):
@@ -38,3 +39,11 @@ class CarDetailsView(views.DetailView):
     def get_object(self, queryset=None):
         car_id = self.kwargs.get('car_id')
         return get_object_or_404(Car, id=car_id)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        car = self.get_object()
+        repairs = Repair.objects.filter(car=car)
+        context['repairs'] = repairs
+        return context
+

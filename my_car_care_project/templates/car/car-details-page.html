@@ -2,5 +2,24 @@
 
 {% block content %}
     <h2>Car Details</h2>
-    <p>{{ object }}</p>
+
+    <div class="car-details">
+        <h3 class="car-info">Car Information</h3>
+        <p class="car-brand">Brand: {{ object.brand }}</p>
+        <p class="car-model">Model: {{ object.model }}</p>
+        <p class="car-year">Year: {{ object.year }}</p>
+    </div>
+
+    <div class="repair-history">
+        <h3 class="repair-history">Repair History</h3>
+        {% if repairs %}
+            <ul class="repair-list">
+                {% for repair in repairs %}
+                    <li class="repair-element">{{ repair.date }} - {{ repair.description }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-repair">No repair history available.</p>
+        {% endif %}
+    </div>
 {% endblock %}

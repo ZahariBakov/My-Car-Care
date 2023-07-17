@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Maintenance</h2>
+
+    {% if maintenance %}
+        <ul class="maintenance-list">
+            {% for maintenance_item in maintenance %}
+                <li class="maintenance-item">
+                    <h3 class="maintenance-title">{{ maintenance_item.title }}</h3>
+                    <p class="maintenance-description">{{ maintenance_item.description }}</p>
+                    <p class="maintenance-date">Date: {{ maintenance_item.date }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-maintenance">No maintenance records available.</p>
+    {% endif %}
+{% endblock %}
