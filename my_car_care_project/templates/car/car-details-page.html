@@ -10,6 +10,25 @@
         <p class="car-year">Year: {{ object.year }}</p>
     </div>
 
+    <div class="maintenance-details">
+        <h3 class="maintenance-name">Maintenance Information</h3>
+    {% if maintenances %}
+        <ul class="maintenance-list">
+            {% for maintenance in maintenances %}
+                <li class="maintenance-title">{{ maintenance.title }}</li>
+                {% if maintenance.description %}
+                    <li class="maintenance-description">{{ maintenance.description }}</li>
+                {% endif %}
+                <li class="maintenance-date">{{ maintenance.date }}</li>
+                {% if maintenance.cost %}
+                    <li class="maintenance-cost">{{ maintenance.cost }}</li>
+                {% endif %}
+                <li class="maintenance-status">{{ maintenance.status }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    </div>
+
     <div class="repair-history">
         <h3 class="repair-history">Repair History</h3>
         {% if repairs %}
@@ -22,4 +41,7 @@
             <p class="no-repair">No repair history available.</p>
         {% endif %}
     </div>
+
+    <a href="{% url 'maintenance-add' car_id=object.id %}" class="btn-primary">Add Maintenance</a>
+
 {% endblock %}
