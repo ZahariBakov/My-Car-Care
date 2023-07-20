@@ -1,47 +1,46 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Car Details</h2>
+    <div class="car-details-page">
+        <h2 class="car-details-title">Car Details</h2>
 
-    <div class="car-details">
-        <h3 class="car-info">Car Information</h3>
-        <p class="car-brand">Brand: {{ object.brand }}</p>
-        <p class="car-model">Model: {{ object.model }}</p>
-        <p class="car-year">Year: {{ object.year }}</p>
-    </div>
+        <div class="car-details-elements">
+            <div class="car-details">
+                <h3 class="car-info">Car Information</h3>
+                <p class="car-brand">Brand: {{ object.brand }}</p>
+                <p class="car-model">Model: {{ object.model }}</p>
+                <p class="car-year">Year: {{ object.year }}</p>
 
-    <div class="maintenance-details">
-        <h3 class="maintenance-name">Maintenance Information</h3>
-    {% if maintenances %}
-        <ul class="maintenance-list">
-            {% for maintenance in maintenances %}
-                <li class="maintenance-title">{{ maintenance.title }}</li>
-                {% if maintenance.description %}
-                    <li class="maintenance-description">{{ maintenance.description }}</li>
+                <a href="#" class="btn-edit">Edit Car</a>
+            </div>
+
+            <div class="maintenance-details">
+                <h3 class="maintenance-name">Maintenance Information</h3>
+                {% if maintenances %}
+                    <ul class="maintenance-list">
+                        {% for maintenance in maintenances %}
+                            <li class="maintenance">{{ maintenance.title }} - {{ maintenance.status }}</li>
+                        {% endfor %}
+                    </ul>
                 {% endif %}
-                <li class="maintenance-date">{{ maintenance.date }}</li>
-                {% if maintenance.cost %}
-                    <li class="maintenance-cost">{{ maintenance.cost }}</li>
+
+                <a href="{% url 'maintenance_add' car_id=object.id %}" class="btn-primary">Add Maintenance</a>
+                <a href="#" class="btn-edit">Edit Maintenance</a>
+            </div>
+
+            <div class="repair-history">
+                <h3 class="repair-history">Repair History</h3>
+                {% if repairs %}
+                    <ul class="repair-list">
+                        {% for repair in repairs %}
+                            <li class="repair-element">{{ repair.date }} - {{ repair.description }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="no-repair">No repair history available.</p>
                 {% endif %}
-                <li class="maintenance-status">{{ maintenance.status }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+            </div>
+        </div>
     </div>
-
-    <div class="repair-history">
-        <h3 class="repair-history">Repair History</h3>
-        {% if repairs %}
-            <ul class="repair-list">
-                {% for repair in repairs %}
-                    <li class="repair-element">{{ repair.date }} - {{ repair.description }}</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <p class="no-repair">No repair history available.</p>
-        {% endif %}
-    </div>
-
-    <a href="{% url 'maintenance_add' car_id=object.id %}" class="btn-primary">Add Maintenance</a>
 
 {% endblock %}
