@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Add Maintenance</h2>
+
+    <form method="post" action="{% url 'maintenance_add' car_id=car.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Save</button>
+    </form>
+
+    {% if form.errors %}
+    <div class="alert alert-danger mt-4">
+      <strong>Form Errors:</strong>
+      <ul>
+        {% for field in form %}
+          {% for error in field.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+{% endblock %}
