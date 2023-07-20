@@ -29,7 +29,7 @@ class MaintenanceAddView(views.View):
         car_id = kwargs['car_id']
         car = get_object_or_404(Car, id=car_id)
         form = self.form_class(request.POST)
-        print("Form valid:", form.is_valid())
+
         if form.is_valid():
             maintenance = form.save(commit=False)
             maintenance.car = car

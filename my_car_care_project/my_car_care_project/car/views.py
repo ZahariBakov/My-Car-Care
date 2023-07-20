@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.views import generic as views
 from my_car_care_project.car.forms import CarAddForm
 from my_car_care_project.car.models import Car
+from my_car_care_project.maintenance.models import Maintenance
 from my_car_care_project.repairs.models import Repair
 
 
@@ -44,6 +45,8 @@ class CarDetailsView(views.DetailView):
         context = super().get_context_data(**kwargs)
         car = self.get_object()
         repairs = Repair.objects.filter(car=car)
+        maintenances = Maintenance.objects.filter(car=car)
         context['repairs'] = repairs
+        context['maintenances'] = maintenances
         return context
 
