@@ -71,6 +71,9 @@ class ProfileEditView(LoginRequiredMixin, views.UpdateView):
     def get_queryset(self):
         return super().get_queryset().filter(user=self.request.user)
 
+    def get_success_url(self):
+        return reverse_lazy('profile details', kwargs={'pk': self.object.pk})
+
 
 class ProfileDeleteView(LoginRequiredMixin, views.DeleteView):
     template_name = 'accounts/profile-delete-page.html'

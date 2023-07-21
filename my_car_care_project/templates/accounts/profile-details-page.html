@@ -9,8 +9,8 @@
         </div>
         <div class="profile-right">
             <h2>{{ object.username }}</h2>
-            <p>Cars: <span class="car-count">3</span></p>
-            <p>Maintenance: <span class="maintenance-count">5</span></p>
+            <p>Cars: <span class="car-count">{{ cars.count }}</span></p>
+
             <h3 class="names">
                 {% if object.full_name is not None %}
                     {{ object.full_name }}
