@@ -1,8 +1,11 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import get_object_or_404
 from django.templatetags.static import static
 from django.urls import reverse_lazy
 from django.views import generic as views
 from django.contrib.auth import views as auth_view, login, get_user_model
-from my_car_care_project.accounts.forms import RegisterUserForm
+from my_car_care_project.accounts.forms import RegisterUserForm, ProfileEditForm
+from my_car_care_project.accounts.models import Profile
 
 UserModel = get_user_model()
 
@@ -32,11 +35,11 @@ class LoginUserView(auth_view.LoginView):
     template_name = 'accounts/login-page.html'
 
 
-class LogoutUserView(auth_view.LogoutView):
+class LogoutUserView(LoginRequiredMixin, auth_view.LogoutView):
     pass
 
 
-class ProfileDetailsView(views.DetailView):
+class ProfileDetailsView(LoginRequiredMixin, views.DetailView):
     template_name = 'accounts/profile-details-page.html'
     model = UserModel
 
@@ -56,9 +59,21 @@ class ProfileDetailsView(views.DetailView):
         return context
 
 
-class ProfileEditView(views.UpdateView):
-    template_name = 'accounts/profile-edit.html'
+class ProfileEditView(LoginRequiredMixin, views.UpdateView):
+    template_name = 'accounts/profile-edit-page.html'
+    model = Profile
+    form_class = ProfileEditForm
+    success_url = reverse_lazy('profile details')
+
+    def get_object(self, queryset=None):
+        return get_object_or_404(Profile, pk=self.kwargs['pk'])
+
+    def get_queryset(self):
+        return super().get_queryset().filter(user=self.request.user)
 
 
-class ProfileDeleteView(views.DeleteView):
-    template_name = 'accounts/profile-delete.html'
+class ProfileDeleteView(LoginRequiredMixin, views.DeleteView):
+    template_name = 'accounts/profile-delete-page.html'
+    model = Profile
+    extra_context = {'title': 'Are you sure you want to delete this profile?'}
+    success_url = reverse_lazy('index')
