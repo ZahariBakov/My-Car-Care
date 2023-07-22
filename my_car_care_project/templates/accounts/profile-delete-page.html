@@ -2,9 +2,9 @@
 
 {% block content %}
     <div class="profile-delete-container">
-        <h2>Delete Profile</h2>
-        <p>Are you sure you want to delete your profile?</p>
-        <form method="post" action="{% url 'profile delete' pk=object.pk %}">
+        <h2 class="profile-delete-title">Delete Profile</h2>
+        <p class="profile-delete-text">Are you sure you want to delete your profile?</p>
+        <form class="profile-delete-form" method="post" action="{% url 'profile delete' pk=object.pk %}">
             {% csrf_token %}
             <button type="submit" class="btn-accept">Delete</button>
             <a href="{% url 'profile details' object.pk %}" class="btn-reject">Cancel</a>

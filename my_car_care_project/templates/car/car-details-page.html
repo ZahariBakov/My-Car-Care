@@ -11,7 +11,8 @@
                 <p class="car-model">Model: {{ object.model }}</p>
                 <p class="car-year">Year: {{ object.year }}</p>
 
-                <a href="#" class="btn-accept">Edit Car</a>
+                <a href="{% url 'car edit' car_id=object.pk %}" class="btn-accept">Edit Car</a>
+                <a href="{% url 'car delete' car_id=object.pk %}" class="btn-reject">Delete Car</a>
             </div>
 
             <div class="maintenance-details">

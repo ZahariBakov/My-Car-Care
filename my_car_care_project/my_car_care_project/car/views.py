@@ -1,6 +1,7 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import get_object_or_404
-from django.urls import reverse
+from django.shortcuts import get_object_or_404, render
+from django.urls import reverse, reverse_lazy
 from django.views import generic as views
 from my_car_care_project.car.forms import CarAddForm
 from my_car_care_project.car.models import Car
@@ -50,3 +51,24 @@ class CarDetailsView(views.DetailView):
         context['maintenances'] = maintenances
         return context
 
+
+@login_required
+def car_edit_view(request, car_id):
+    car = Car.objects.filter(pk=car_id).get()
+
+    context = {
+        'car': car
+    }
+
+    return render(request, 'car/car-edit-page.html', context)
+
+
+class CarDeleteView(LoginRequiredMixin, views.DeleteView):
+    template_name = 'car/car-delete-page.html'
+    model = Car
+    extra_context = {'title': 'Are you sure you want to delete this car?'}
+    success_url = reverse_lazy('car page')
+
+    def get_object(self, queryset=None):
+        car_id = self.kwargs.get('car_id')
+        return get_object_or_404(Car, pk=car_id)

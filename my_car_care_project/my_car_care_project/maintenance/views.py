@@ -38,5 +38,3 @@ class MaintenanceAddView(views.View):
             return HttpResponseRedirect(reverse('car details', kwargs={'car_id': car_id}))
         context = {'form': form, 'car': car}
         return render(request, self.template_name, context)
-
-
