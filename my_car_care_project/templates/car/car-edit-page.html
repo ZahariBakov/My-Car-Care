@@ -2,4 +2,13 @@
 
 {% block content %}
     <h2>Car Edit page</h2>
+
+    <form class="car-edit-form" action="{% url 'car edit' car_id=car.pk %}" method="post">
+
+        {{ form.as_p }}
+        {% csrf_token %}
+
+        <button class="btn-accept" type="submit">Edit Car</button>
+    </form>
+
 {% endblock %}

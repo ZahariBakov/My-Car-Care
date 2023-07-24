@@ -10,6 +10,18 @@
                 <p class="car-brand">Brand: {{ object.brand }}</p>
                 <p class="car-model">Model: {{ object.model }}</p>
                 <p class="car-year">Year: {{ object.year }}</p>
+                {% if object.odometer %}
+                    <p class="car-odometer">Odometer: {{ object.odometer }}</p>
+                {% endif %}
+                {% if object.purchase_price %}
+                    <p class="car-purchase_price">Purchase price: {{ object.purchase_price }}</p>
+                {% endif %}
+                {% if object.date_of_purchase %}
+                    <p class="car-date_of_purchase">Date of purchase: {{ object.date_of_purchase }}</p>
+                {% endif %}
+                {% if object.photo %}
+                    <p class="car-photo">Car photo: {{ object.photo }}</p>
+                {% endif %}
 
                 <a href="{% url 'car edit' car_id=object.pk %}" class="btn-accept">Edit Car</a>
                 <a href="{% url 'car delete' car_id=object.pk %}" class="btn-reject">Delete Car</a>

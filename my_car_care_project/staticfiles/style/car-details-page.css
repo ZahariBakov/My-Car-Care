@@ -33,7 +33,10 @@
 
 .car-details .car-brand,
 .car-details .car-model,
-.car-details .car-year {
+.car-details .car-odometer,
+.car-details .car-purchase_price,
+.car-details .car-date_of_purchase,
+.car-details .car-photo {
   margin-bottom: 5px;
 }
 

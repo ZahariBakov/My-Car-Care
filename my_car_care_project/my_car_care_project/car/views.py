@@ -1,9 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse, reverse_lazy
 from django.views import generic as views
-from my_car_care_project.car.forms import CarAddForm
+from my_car_care_project.car.forms import CarAddForm, CarEditForm
 from my_car_care_project.car.models import Car
 from my_car_care_project.maintenance.models import Maintenance
 from my_car_care_project.repairs.models import Repair
@@ -23,8 +23,8 @@ class CarAddView(views.CreateView):
     form_class = CarAddForm
 
     def get_success_url(self):
-        return reverse('car page', kwargs={
-            'pk': self.object.pk
+        return reverse('car details', kwargs={
+            'car_id': self.object.pk
         })
 
     def get_form(self, *args, **kwargs):
@@ -55,9 +55,15 @@ class CarDetailsView(views.DetailView):
 @login_required
 def car_edit_view(request, car_id):
     car = Car.objects.filter(pk=car_id).get()
+    form = CarEditForm(request.POST or None, instance=car)
+
+    if form.is_valid():
+        form.save()
+        return redirect('car details', car_id=car_id)
 
     context = {
-        'car': car
+        'car': car,
+        'form': form,
     }
 
     return render(request, 'car/car-edit-page.html', context)
