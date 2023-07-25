@@ -38,7 +38,7 @@
                 {% endif %}
 
                 <a href="{% url 'maintenance_add' car_id=object.id %}" class="btn-add">Add Maintenance</a>
-                <a href="#" class="btn-accept">Edit Maintenance</a>
+                <a href="{% url 'maintenance edit' car_id=object.id %}" class="btn-accept">Edit Maintenance</a>
             </div>
 
             <div class="repair-history">

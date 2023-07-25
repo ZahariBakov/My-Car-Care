@@ -9,3 +9,9 @@ class MaintenanceAddForm(forms.ModelForm):
     class Meta:
         model = Maintenance
         fields = ['title', 'description', 'date', 'cost', 'status']
+
+
+class MaintenanceEditForm(forms.ModelForm):
+    class Meta:
+        model = Maintenance
+        fields = '__all__'
