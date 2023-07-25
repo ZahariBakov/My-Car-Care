@@ -1,2 +1,2 @@
 # My-Car-Care
-My final exam project.
+Final exam project.
