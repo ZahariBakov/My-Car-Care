@@ -40,9 +40,9 @@ class MaintenanceAddView(views.View):
         return render(request, self.template_name, context)
 
 
-def maintenance_edit_view(request, car_id):
-    car = get_object_or_404(Car, pk=car_id)
-    maintenance = get_object_or_404(Maintenance, pk=car_id)
+def maintenance_edit_view(request, maintenance_id):
+    maintenance = get_object_or_404(Maintenance, pk=maintenance_id)
+    car = maintenance.car
 
     if request.method == 'POST':
         form = MaintenanceEditForm(request.POST, instance=maintenance)
@@ -60,16 +60,20 @@ def maintenance_edit_view(request, car_id):
                     cost=maintenance.cost,
                 )
 
-                return redirect('car details', car_id=car_id)
+                maintenance.delete()
+                return redirect('car details', car_id=car.pk)
 
-            return redirect('car details', car_id=car_id)
+            return redirect('car details', car_id=car.pk)
     else:
         form = MaintenanceEditForm(instance=maintenance)
+
+    maintenances = Maintenance.objects.filter(car=car)
 
     context = {
         'maintenance': maintenance,
         'form': form,
         'car': car,
+        'maintenances': maintenances,
     }
 
     return render(request, 'maintenance/maintenance-edit-page.html', context)
