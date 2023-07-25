@@ -42,11 +42,11 @@
             </div>
 
             <div class="repair-history">
-                <h3 class="repair-history">Repair History</h3>
+                <h3 class="repair-history">Service History</h3>
                 {% if repairs %}
                     <ul class="repair-list">
                         {% for repair in repairs %}
-                            <li class="repair-element">{{ repair.date }} - {{ repair.description }}</li>
+                            <li class="repair-element">{{ repair.date }} - {{ repair.description }} - Cost {{ repair.cost }}</li>
                         {% endfor %}
                     </ul>
                 {% else %}

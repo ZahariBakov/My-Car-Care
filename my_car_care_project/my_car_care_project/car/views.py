@@ -5,8 +5,7 @@ from django.urls import reverse, reverse_lazy
 from django.views import generic as views
 from my_car_care_project.car.forms import CarAddForm, CarEditForm
 from my_car_care_project.car.models import Car
-from my_car_care_project.maintenance.models import Maintenance
-from my_car_care_project.repairs.models import Repair
+from my_car_care_project.maintenance.models import Maintenance, Repair
 
 
 class CarPageView(LoginRequiredMixin, views.TemplateView):

@@ -5,7 +5,7 @@ from django.views import generic as views
 
 from my_car_care_project.car.models import Car
 from my_car_care_project.maintenance.forms import MaintenanceAddForm, MaintenanceEditForm
-from my_car_care_project.maintenance.models import Maintenance
+from my_car_care_project.maintenance.models import Maintenance, Repair
 
 
 def maintenance_page(request):
@@ -41,12 +41,30 @@ class MaintenanceAddView(views.View):
 
 
 def maintenance_edit_view(request, car_id):
-    maintenance = Maintenance.objects.filter(pk=car_id).get()
-    car = Car.objects.filter(pk=car_id).get()
-    form = MaintenanceEditForm(request.POST or None, instance=maintenance)
-    if form.is_valid():
-        form.save()
-        return redirect('car details', car_id=car_id)
+    car = get_object_or_404(Car, pk=car_id)
+    maintenance = get_object_or_404(Maintenance, pk=car_id)
+
+    if request.method == 'POST':
+        form = MaintenanceEditForm(request.POST, instance=maintenance)
+
+        if form.is_valid():
+            maintenance = form.save(commit=False)
+            maintenance.car = car
+            maintenance.save()
+
+            if 'add_to_history' in request.POST:
+                repair = Repair.objects.create(
+                    car=car,
+                    date=maintenance.date,
+                    description=maintenance.description,
+                    cost=maintenance.cost,
+                )
+
+                return redirect('car details', car_id=car_id)
+
+            return redirect('car details', car_id=car_id)
+    else:
+        form = MaintenanceEditForm(instance=maintenance)
 
     context = {
         'maintenance': maintenance,

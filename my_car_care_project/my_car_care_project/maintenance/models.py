@@ -44,3 +44,25 @@ class Maintenance(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Repair(models.Model):
+    car = models.ForeignKey(
+        Car,
+        on_delete=models.CASCADE,
+        related_name='repairs'
+    )
+
+    date = models.DateField()
+
+    description = models.TextField()
+
+    cost = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        null=True,
+        blank=True
+    )
+
+    def __str__(self):
+        return f"Repair on {self.car} - {self.date}"
