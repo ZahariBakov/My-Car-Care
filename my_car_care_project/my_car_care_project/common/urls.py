@@ -1,6 +1,6 @@
 from django.urls import path
-from django.views import generic as views
+from my_car_care_project.common.views import IndexView
 
 urlpatterns = (
-    path('', views.TemplateView.as_view(template_name='common/index.html')),
+    path('', IndexView.as_view(), name='index'),
 )
