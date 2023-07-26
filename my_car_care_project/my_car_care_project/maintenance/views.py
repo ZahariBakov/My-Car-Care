@@ -1,6 +1,8 @@
+from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.views import generic as views
 
 from my_car_care_project.car.models import Car
@@ -8,9 +10,20 @@ from my_car_care_project.maintenance.forms import MaintenanceAddForm, Maintenanc
 from my_car_care_project.maintenance.models import Maintenance, Repair
 
 
+def is_maintenance_group_user(user):
+    return user.is_superuser or user.groups.filter(name='master_user').exists() or user.groups.filter(
+        name='maintenance_moderator').exists()
+
+
+@user_passes_test(is_maintenance_group_user)
 def maintenance_page(request):
-    maintenance = Maintenance.objects.all()
-    context = {'maintenance': maintenance}
+    maintenances = Maintenance.objects.all()
+    repairs = Repair.objects.all()
+
+    context = {
+        'maintenances': maintenances,
+        'repairs': repairs,
+    }
     return render(request, 'maintenance/maintenance-page.html', context)
 
 
@@ -67,13 +80,21 @@ def maintenance_edit_view(request, maintenance_id):
     else:
         form = MaintenanceEditForm(instance=maintenance)
 
-    # maintenances = Maintenance.objects.filter(car=car)
-
     context = {
         'maintenance': maintenance,
         'form': form,
         'car': car,
-        # 'maintenances': maintenances,
     }
 
     return render(request, 'maintenance/maintenance-edit-page.html', context)
+
+
+class MaintenanceDeleteView(LoginRequiredMixin, views.DeleteView):
+    template_name = 'maintenance/maintenance-delete-page.html'
+    model = Maintenance
+    extra_context = {'title': 'Are you sure you want to delete this maintenance?'}
+    success_url = reverse_lazy('maintenance')
+
+    def get_object(self, queryset=None):
+        maintenance_id = self.kwargs.get('maintenance_id')
+        return get_object_or_404(Maintenance, pk=maintenance_id)

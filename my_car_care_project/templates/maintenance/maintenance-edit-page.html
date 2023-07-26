@@ -3,17 +3,17 @@
 {% block content %}
     <h2>Maintenance Edit Page</h2>
 
-{#    {% for maintenance in maintenances %}#}
-        <form class="maintenance-edit-form" action="{% url 'maintenance edit' maintenance_id=maintenance.pk %}" method="post">
-            {{ form.as_p }}
-            {% csrf_token %}
-            <div class="button-group">
-                <button class="btn-accept" type="submit">Edit Maintenance</button>
-                <a href="{% url 'car details' car_id=car.pk %}" class="btn-reject">Cancel</a>
-                <button class="btn-add" type="submit" name="add_to_history" value="True">
-                    Add to Service History
-                </button>
-            </div>
-        </form>
-{#    {% endfor %}#}
+    <form class="maintenance-edit-form" action="{% url 'maintenance edit' maintenance_id=maintenance.pk %}"
+          method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <div class="button-group">
+            <button class="btn-accept" type="submit">Edit Maintenance</button>
+            <a href="{% url 'car details' car_id=car.pk %}" class="btn-reject">Cancel</a>
+            <button class="btn-add" type="submit" name="add_to_history" value="True">
+                Add to Service History
+            </button>
+        </div>
+    </form>
+
 {% endblock %}
