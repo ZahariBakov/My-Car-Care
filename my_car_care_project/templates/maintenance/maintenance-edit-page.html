@@ -3,7 +3,7 @@
 {% block content %}
     <h2>Maintenance Edit Page</h2>
 
-    {% for maintenance in maintenances %}
+{#    {% for maintenance in maintenances %}#}
         <form class="maintenance-edit-form" action="{% url 'maintenance edit' maintenance_id=maintenance.pk %}" method="post">
             {{ form.as_p }}
             {% csrf_token %}
@@ -15,5 +15,5 @@
                 </button>
             </div>
         </form>
-    {% endfor %}
+{#    {% endfor %}#}
 {% endblock %}

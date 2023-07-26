@@ -67,13 +67,13 @@ def maintenance_edit_view(request, maintenance_id):
     else:
         form = MaintenanceEditForm(instance=maintenance)
 
-    maintenances = Maintenance.objects.filter(car=car)
+    # maintenances = Maintenance.objects.filter(car=car)
 
     context = {
         'maintenance': maintenance,
         'form': form,
         'car': car,
-        'maintenances': maintenances,
+        # 'maintenances': maintenances,
     }
 
     return render(request, 'maintenance/maintenance-edit-page.html', context)

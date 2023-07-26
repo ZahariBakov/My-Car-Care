@@ -4,8 +4,9 @@
 {% block content %}
     <div class="profile-container">
         <div class="profile-left">
-            <div class="image"></div>
-            <img src="{{ profile_image }}" alt="Profile Picture">
+            <div class="image">
+                <img src="{{ profile_image }}" alt="Profile Picture">
+            </div>
         </div>
         <div class="profile-right">
             <h2>{{ object.username }}</h2>
