@@ -21,7 +21,7 @@
         <p class="no-maintenance">No maintenance records available.</p>
     {% endif %}
 
-    <h2>Repairs</h2>
+    <h2>Service History</h2>
 
     {% if repairs %}
         <ul class="repair-list">
@@ -29,7 +29,7 @@
                 <li class="repair-item">
                     <h3 class="repair-title">{{ repair.car }} - {{ repair.date }}</h3>
                     <p class="repair-description">{{ repair.description }}</p>
-                    <a href="#" class="btn-accept">Edit repair</a>
+                    <a href="{% url 'history edit' repair_id=repair.pk %}" class="btn-accept">Edit repair</a>
                     <a href="#" class="btn-reject">Delete repair</a>
                 </li>
             {% endfor %}

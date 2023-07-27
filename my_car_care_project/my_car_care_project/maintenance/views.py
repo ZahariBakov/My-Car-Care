@@ -6,13 +6,18 @@ from django.urls import reverse, reverse_lazy
 from django.views import generic as views
 
 from my_car_care_project.car.models import Car
-from my_car_care_project.maintenance.forms import MaintenanceAddForm, MaintenanceEditForm
+from my_car_care_project.maintenance.forms import MaintenanceAddForm, MaintenanceEditForm, RepairEditForm
 from my_car_care_project.maintenance.models import Maintenance, Repair
 
 
 def is_maintenance_group_user(user):
     return user.is_superuser or user.groups.filter(name='master_user').exists() or user.groups.filter(
         name='maintenance_moderator').exists()
+
+
+def is_car_group_user(user):
+    return user.is_superuser or user.groups.filter(name='master_user').exists() or user.groups.filter(
+        name='car_moderator').exists()
 
 
 @user_passes_test(is_maintenance_group_user)
@@ -98,3 +103,24 @@ class MaintenanceDeleteView(LoginRequiredMixin, views.DeleteView):
     def get_object(self, queryset=None):
         maintenance_id = self.kwargs.get('maintenance_id')
         return get_object_or_404(Maintenance, pk=maintenance_id)
+
+
+@user_passes_test(is_car_group_user)
+def repair_edit_view(request, repair_id):
+    repair = get_object_or_404(Repair, pk=repair_id)
+
+    if request.method == 'POST':
+        form = RepairEditForm(request.POST, instance=repair)
+        if form.is_valid():
+            form.save()
+            return redirect('maintenance')
+    else:
+        form = RepairEditForm(instance=repair)  # Use 'instance=repair' to populate the form with data
+
+    context = {
+        'form': form,
+        'repair': repair,
+    }
+
+    return render(request, 'History/history-edit-page.html', context)
+
