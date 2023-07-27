@@ -15,11 +15,6 @@ def is_maintenance_group_user(user):
         name='maintenance_moderator').exists()
 
 
-def is_car_group_user(user):
-    return user.is_superuser or user.groups.filter(name='master_user').exists() or user.groups.filter(
-        name='car_moderator').exists()
-
-
 @user_passes_test(is_maintenance_group_user)
 def maintenance_page(request):
     maintenances = Maintenance.objects.all()
@@ -105,7 +100,7 @@ class MaintenanceDeleteView(LoginRequiredMixin, views.DeleteView):
         return get_object_or_404(Maintenance, pk=maintenance_id)
 
 
-@user_passes_test(is_car_group_user)
+@user_passes_test(is_maintenance_group_user)
 def history_edit_view(request, repair_id):
     repair = get_object_or_404(Repair, pk=repair_id)
 

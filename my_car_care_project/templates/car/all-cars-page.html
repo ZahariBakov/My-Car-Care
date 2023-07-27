@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>All Cars</h2>
+
+    {% if cars %}
+        {% for car in cars %}
+            <li class="car-item">
+                <h3 class="car-title">{{ car.brand }} - {{ car.model }}</h3>
+                <p class="car-user">{{ car.user }}</p>
+                <a href="{% url 'car edit' car_id=car.pk %}" class="btn-accept">Edit
+                    Car</a>
+                <a href="{% url 'car delete' car_id=car.pk %}" class="btn-reject">Delete
+                    Car</a>
+            </li>
+        {% endfor %}
+
+    {% else %}
+        <p class="no-cars">No cars records available.</p>
+    {% endif %}
+{% endblock %}

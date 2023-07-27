@@ -19,6 +19,10 @@
 
     <div class="nav-right">
         <ul>
+            {% if request.user|user_can_see_car_button %}
+                <li><a href="{% url 'all cars' %}" class="btn-accept">Cars</a></li>
+            {% endif %}
+
             {% if request.user|user_can_see_maintenance_button %}
                 <li><a href="{% url 'maintenance' %}" class="btn-accept">Maintenance</a></li>
             {% endif %}

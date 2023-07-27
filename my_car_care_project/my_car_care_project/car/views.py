@@ -1,4 +1,4 @@
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse, reverse_lazy
@@ -6,6 +6,11 @@ from django.views import generic as views
 from my_car_care_project.car.forms import CarAddForm, CarEditForm
 from my_car_care_project.car.models import Car
 from my_car_care_project.maintenance.models import Maintenance, Repair
+
+
+def is_car_group_user(user):
+    return user.is_superuser or user.groups.filter(name='master_user').exists() or user.groups.filter(
+        name='car_moderator').exists()
 
 
 class CarPageView(LoginRequiredMixin, views.TemplateView):
@@ -77,3 +82,14 @@ class CarDeleteView(LoginRequiredMixin, views.DeleteView):
     def get_object(self, queryset=None):
         car_id = self.kwargs.get('car_id')
         return get_object_or_404(Car, pk=car_id)
+
+
+@user_passes_test(is_car_group_user)
+def all_cars_page(request):
+    cars = Car.objects.all()
+
+    context = {
+        'cars': cars,
+    }
+
+    return render(request, 'car/all-cars-page.html', context)
