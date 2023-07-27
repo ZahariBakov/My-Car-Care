@@ -1,5 +1,5 @@
 .hero {
-    background-image: url("staticfiles/images/pexels-artem-podrez-8986148.jpg");
+    background: #337ab7;
     background-size: cover;
     background-position: center;
     height: 500px;
@@ -24,12 +24,18 @@
     margin-bottom: 30px;
 }
 
-.btn-primary {
+.btn-add {
+    display: inline-block;
+    padding: 10px 20px;
     background-color: #e74c3c;
     color: #fff;
-    padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-add:hover {
+    background-color: #d63027;
 }
 
 .features {

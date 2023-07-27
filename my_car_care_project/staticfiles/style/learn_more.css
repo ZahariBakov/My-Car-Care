@@ -1,0 +1,58 @@
+.about-section,
+.expert-tehnicians-section,
+.customer-testimonials-section,
+.quality-assurance-section,
+.competitive-pricing-section,
+.booking-process-section,
+.contact-information-section {
+  margin-bottom: 30px;
+}
+
+.learn-header {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.learn-paragraph {
+  color: #777;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.testimonials-paragraph {
+  font-style: italic;
+}
+
+.contact-information-paragraph {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.phone-paragraph,
+.email-paragraph {
+  margin-left: 20px;
+}
+
+.address-paragraph {
+  margin-left: 40px;
+}
+
+.main-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Responsive styling */
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
