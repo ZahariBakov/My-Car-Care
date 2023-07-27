@@ -106,7 +106,7 @@ class MaintenanceDeleteView(LoginRequiredMixin, views.DeleteView):
 
 
 @user_passes_test(is_car_group_user)
-def repair_edit_view(request, repair_id):
+def history_edit_view(request, repair_id):
     repair = get_object_or_404(Repair, pk=repair_id)
 
     if request.method == 'POST':
@@ -122,5 +122,15 @@ def repair_edit_view(request, repair_id):
         'repair': repair,
     }
 
-    return render(request, 'History/history-edit-page.html', context)
+    return render(request, 'history/history-edit-page.html', context)
 
+
+class HistoryDeleteView(LoginRequiredMixin, views.DeleteView):
+    template_name = 'history/history-delete-page.html'
+    model = Repair
+    extra_context = {'title': 'Are you sure you want to delete this history?'}
+    success_url = reverse_lazy('maintenance')
+
+    def get_object(self, queryset=None):
+        repair_id = self.kwargs.get('repair_id')
+        return get_object_or_404(Repair, pk=repair_id)

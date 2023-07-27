@@ -30,7 +30,7 @@
                     <h3 class="repair-title">{{ repair.car }} - {{ repair.date }}</h3>
                     <p class="repair-description">{{ repair.description }}</p>
                     <a href="{% url 'history edit' repair_id=repair.pk %}" class="btn-accept">Edit repair</a>
-                    <a href="#" class="btn-reject">Delete repair</a>
+                    <a href="{% url 'history delete' repair_id=repair.pk %}" class="btn-reject">Delete repair</a>
                 </li>
             {% endfor %}
 
