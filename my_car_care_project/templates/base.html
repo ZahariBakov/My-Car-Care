@@ -14,18 +14,20 @@
 </head>
 <body>
 
-{% include 'navigation.html' %}
+<div class="all-content">
+    {% include 'navigation.html' %}
 
-<hr>
+    <hr>
 
-<main class="main">
-    {% block content %}
-    {% endblock %}
-</main>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 
-<hr>
+    <hr>
 
-{% include 'footer.html' %}
+    {% include 'footer.html' %}
+</div>
 
 </body>
 </html>

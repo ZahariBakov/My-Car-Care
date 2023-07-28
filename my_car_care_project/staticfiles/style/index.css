@@ -1,5 +1,8 @@
+.all-content {
+    background: #dbdbdb;
+}
+
 .hero {
-    background: #337ab7;
     background-size: cover;
     background-position: center;
     height: 500px;
@@ -14,13 +17,13 @@
 
 .hero-content h1 {
     font-size: 36px;
-    color: #fff;
+    color: #777;
     margin-bottom: 20px;
 }
 
 .hero-content p {
     font-size: 18px;
-    color: #fff;
+    color: #777;
     margin-bottom: 30px;
 }
 
@@ -58,7 +61,7 @@
 
 .feature h2 {
     font-size: 24px;
-    color: #333;
+    color: #777;
     margin-bottom: 10px;
 }
 
