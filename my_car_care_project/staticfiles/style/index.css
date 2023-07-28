@@ -2,6 +2,10 @@
     background: #dbdbdb;
 }
 
+.main-content {
+    height: 78vh;
+}
+
 .hero {
     background-size: cover;
     background-position: center;
