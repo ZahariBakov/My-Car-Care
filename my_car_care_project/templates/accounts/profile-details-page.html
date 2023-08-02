@@ -21,8 +21,10 @@
             </h3>
             <p>{{ object.email }}</p>
 
-            <a href="{% url 'profile edit' pk=object.pk %}" class="btn-accept">Edit Profile</a>
-            <a href="{% url 'profile delete' pk=object.pk %}" class="btn-reject">Delete Profile</a>
+            <div class="button-group">
+                <a href="{% url 'profile edit' pk=object.pk %}" class="btn-accept">Edit Profile</a>
+                <a href="{% url 'profile delete' pk=object.pk %}" class="btn-reject">Delete Profile</a>
+            </div>
         </div>
     </div>
 {% endblock %}

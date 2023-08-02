@@ -7,7 +7,7 @@
         {% csrf_token %}
         {{ form.as_p }}
 
-        <button type="submit">Save</button>
+        <button type="submit" class="btn-add">Save</button>
     </form>
 
     {% if form.errors %}

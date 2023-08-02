@@ -1,26 +1,38 @@
 .profile-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding-top: 50px;
+    gap: 30px;
+    padding: 20px;
 }
 
 .profile-left {
-    margin-right: 50px;
-}
-
-.profile-left img {
-    width: 175px;
-    height: 175px;
-    margin-top: 10px;
-    border-radius: 50%;
-    object-fit: cover;
+    flex: 1;
 }
 
 .profile-right {
-    font-size: 18px;
+    flex: 2;
 }
 
-.names {
+.profile-right h2 {
+    font-size: 24px;
     margin-bottom: 10px;
+}
+
+.profile-right p {
+    margin: 5px 0;
+}
+
+.profile-right .car-count {
+    font-weight: bold;
+}
+
+.profile-right .names {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.image img {
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }

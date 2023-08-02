@@ -5,6 +5,8 @@
 
     <form class="maintenance-edit-form" action="{% url 'maintenance edit' maintenance_id=maintenance.pk %}"
           method="post">
+        <p class="label">Car:</p>
+        <p class="maintenance-car">{{ car }}</p>
         {{ form.as_p }}
         {% csrf_token %}
         <div class="button-group">
