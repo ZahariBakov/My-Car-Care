@@ -4,17 +4,16 @@
 @import "nav.css";
 @import "forms.css";
 
-@import "login.css";
-@import "register.css";
-@import "index.css";
-@import "learn_more.css";
-@import "about_us.css";
-@import "profile_details.css";
-@import "profile-edit-page.css";
+@import "common/index.css";
+@import "common/learn_more.css";
+@import "common/about_us.css";
 
-@import "car-page.css";
-@import "car-details-page.css";
-@import "car-add-page.css";
-@import "car-edit-page.css";
+@import "accounts/login.css";
+@import "accounts/register.css";
+@import "accounts/profile_details.css";
+@import "accounts/profile-edit-page.css";
 
-@import "maintenance-edit-page.css";
+@import "car/car-page.css";
+@import "car/car-details-page.css";
+
+@import "maintenance/maintenance-edit-page.css";
