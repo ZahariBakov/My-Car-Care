@@ -1,0 +1,21 @@
+/* Responsive styling */
+@media only screen and (max-width: 768px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    .car-edit-form {
+        padding: 10px;
+    }
+
+    .car-edit-form form input,
+    .car-edit-form form select,
+    .car-edit-form form textarea {
+        padding: 8px;
+    }
+
+    .car-edit-form form .btn-accept {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

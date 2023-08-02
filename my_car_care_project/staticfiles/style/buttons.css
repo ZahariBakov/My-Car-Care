@@ -4,8 +4,9 @@
     background-color: #337ab7;
     color: #fff;
     text-decoration: none;
-    border-radius: 4px;
+    border: none;
     transition: background-color 0.3s;
+    cursor: pointer;
 }
 
 .btn-add:hover {
@@ -15,27 +16,55 @@
 .btn-accept {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #33B77A;
+    background-color: #5cb85c;
     color: #fff;
     text-decoration: none;
-    border-radius: 4px;
+    border: none;
     transition: background-color 0.3s;
+    cursor: pointer;
 }
 
 .btn-accept:hover {
-    background-color: #289060;
+    background-color: #449d44;
 }
 
 .btn-reject {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #B73833;
+    background-color: #d9534f;
     color: #fff;
     text-decoration: none;
-    border-radius: 4px;
+    border: none;
     transition: background-color 0.3s;
+    cursor: pointer;
 }
 
 .btn-reject:hover {
-    background-color: #902C28;
+    background-color: #c9302c;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.nav-button i {
+    color: #fff;
+}
+
+.nav-button:hover {
+  background-color: #555;
+}
+
+.nav-button:active {
+  background-color: #222;
+}
+
+.nav-button:focus {
+  outline: none;
+  box-shadow: 0 0 3px #fff;
 }

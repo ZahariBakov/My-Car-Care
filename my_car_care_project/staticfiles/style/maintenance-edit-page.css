@@ -1,0 +1,29 @@
+.maintenance-edit-form .button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Responsive styling */
+@media only screen and (max-width: 768px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    .maintenance-edit-form {
+        padding: 10px;
+    }
+
+    .maintenance-edit-form input,
+    .maintenance-edit-form select,
+    .maintenance-edit-form textarea {
+        padding: 8px;
+    }
+
+    .btn-accept,
+    .btn-reject,
+    .btn-add {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
