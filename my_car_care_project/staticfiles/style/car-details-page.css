@@ -1,90 +1,113 @@
 .car-details-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  height: 70vh;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .car-details-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 80px;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .car-details-elements {
-  display: flex;
-  justify-content: space-between;
-  width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .car-details,
 .maintenance-details,
 .repair-history {
-  flex-basis: calc(33.33% - 300px);
-  margin-bottom: 20px;
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fff;
 }
 
-.car-details .car-info {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.car-info {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.car-details .car-brand,
-.car-details .car-model,
-.car-details .car-odometer,
-.car-details .car-purchase_price,
-.car-details .car-date_of_purchase,
-.car-details .car-photo {
-  margin-bottom: 5px;
+.car-brand,
+.car-model,
+.car-year,
+.car-odometer,
+.car-purchase_price,
+.car-date_of_purchase,
+.car-photo {
+    margin-bottom: 5px;
+    color: #777;
 }
 
-.maintenance-details .maintenance-name {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.maintenance-name {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.maintenance-details .maintenance-list {
-  list-style-type: none;
-  padding: 0;
+.maintenance-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-.maintenance-details .maintenance, a {
-  margin-bottom: 5px;
+.maintenance {
+    margin-bottom: 5px;
+    color: #777;
 }
 
-.repair-history-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.repair-history {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.repair-history .repair-list {
-  list-style-type: none;
-  padding: 0;
+.repair-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-.repair-history .repair-element {
-  margin-bottom: 5px;
+.repair-element {
+    margin-bottom: 5px;
+    color: #777;
 }
 
 .no-repair {
-  color: #999;
-  font-style: italic;
+    color: #777;
+    margin: 5px 0;
 }
 
-.maintenance-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
 
-.car-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+/* Responsive styling */
+@media only screen and (max-width: 768px) {
+    .car-details-elements {
+        grid-template-columns: 1fr;
+    }
+
+    .car-details,
+    .maintenance-details,
+    .repair-history {
+        margin-bottom: 20px;
+    }
+
+    .car-details,
+    .maintenance-details,
+    .repair-history {
+        padding: 10px;
+    }
+
+    .car-info,
+    .maintenance-name,
+    .repair-history {
+        font-size: 18px;
+    }
+
+    .maintenance,
+    .repair-element {
+        font-size: 16px;
+    }
 }

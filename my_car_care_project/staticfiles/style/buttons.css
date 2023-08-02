@@ -68,3 +68,8 @@
   outline: none;
   box-shadow: 0 0 3px #fff;
 }
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}

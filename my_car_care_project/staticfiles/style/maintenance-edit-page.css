@@ -1,9 +1,3 @@
-.maintenance-edit-form .button-group {
-    display: flex;
-    justify-content: space-between;
-}
-
-
 /* Responsive styling */
 @media only screen and (max-width: 768px) {
     h2 {
