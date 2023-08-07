@@ -46,13 +46,28 @@
   padding: 20px;
 }
 
+
 /* Responsive styling */
 @media only screen and (max-width: 768px) {
-  h2 {
+  .learn-header {
     font-size: 20px;
   }
 
-  p {
+  .learn-paragraph {
     font-size: 14px;
+  }
+
+  .contact-information-paragraph {
+    font-size: 16px;
+  }
+
+  .phone-paragraph,
+  .email-paragraph,
+  .address-paragraph {
+    margin-left: 0;
+  }
+
+  .main-section {
+    padding: 10px;
   }
 }

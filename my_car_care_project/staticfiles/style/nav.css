@@ -1,44 +1,72 @@
 nav {
-  color: #333;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  height: 8vh;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 8vh;
 }
 
 .nav-left ul {
-  display: flex;
-  align-items: baseline;
-  list-style: none;
+    display: flex;
+    align-items: baseline;
+    list-style: none;
 }
 
 .nav-left h2 {
-  margin: 0;
+    margin: 0;
 }
 
 .nav-left li {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 .nav-left li a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 
 .nav-right ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-right li {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 .nav-right li a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
+
+/* Responsive styling */
+@media only screen and (max-width: 768px) {
+    nav {
+        color: #333;
+        display: flex;
+        flex-direction: column; /* Change to column on small screens */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        padding: 10px 20px;
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .nav-left ul,
+    .nav-right ul {
+        display: flex;
+        flex-direction: column; /* Change to column on small screens */
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center; /* Center text in columns */
+    }
+
+    .nav-left li,
+    .nav-right li {
+        margin: 10px 0; /* Add some spacing between items */
+    }
+}

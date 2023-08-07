@@ -16,3 +16,17 @@
     line-height: 1.6;
     margin-bottom: 20px;
 }
+
+
+
+/* Responsive styling */
+@media only screen and (max-width: 768px) {
+  .about-us-title {
+    font-size: 24px;
+  }
+
+  .about-us-paragraph {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+}

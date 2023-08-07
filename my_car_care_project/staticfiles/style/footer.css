@@ -40,3 +40,49 @@ footer {
 i {
     color: black;
 }
+
+
+/* Responsive styling */
+@media only screen and (max-width: 768px) {
+    footer {
+        color: #333;
+        padding: 20px;
+        height: auto; /* Allow height to adjust based on content */
+        display: flex;
+        flex-direction: column; /* Change to column layout on small screens */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column; /* Change to column on small screens */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+    }
+
+    .footer-content h3 {
+        margin: 0;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .footer-left p,
+    .footer-right p {
+        margin: 0;
+        text-align: center; /* Center text in columns */
+    }
+
+    .left-footer-side-paragraph {
+        display: inline-block;
+        margin: 6px;
+        font-size: 24px;
+    }
+
+    i {
+        color: black;
+    }
+
+}
