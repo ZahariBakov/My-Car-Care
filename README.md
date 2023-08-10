@@ -3,7 +3,7 @@ Final exam project.
 
 The Car Care App is a Django-based web application designed to help users manage and track maintenance tasks for their vehicles. Whether you're a car enthusiast or simply want to keep your vehicle in optimal condition, this app provides an organized way to stay on top of maintenance needs.
 
-![Screenshot](screenshot.png)  <!-- Replace with an actual screenshot if available -->
+<img src="https://github.com/ZahariBakov/My-Car-Care/blob/main/my_car_care_project/imgaes/Screenshot%202023-08-10%20154025.png" alt="Index page" style="width: 700px/>
 
 ## Features
 
