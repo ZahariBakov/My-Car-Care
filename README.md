@@ -19,9 +19,7 @@ The Car Care App is a Django-based web application designed to help users manage
 1. Clone the repository: `git clone https://github.com/ZahariBakov/My-Car-Care`
 2. Navigate to the project directory: `cd car-care-app`
 3. Create a virtual environment: `python -m venv venv`
-4. Activate the virtual environment: 
-   `source venv/bin/activate` (Unix-based),
-   `venv\Scripts\activate` (Windows)
+4. Activate the virtual environment: `source venv/bin/activate` (Unix-based) or `venv\Scripts\activate` (Windows)
 5. Install the dependencies: `pip install -r requirements.txt`
 6. Set up the database: `python manage.py migrate`
 7. Create a superuser: `python manage.py createsuperuser`
