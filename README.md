@@ -14,7 +14,7 @@ The Car Care App is a Django-based web application designed to help users manage
 - **Maintenance Moderation:** Authorized users can moderate and approve maintenance tasks.
 - **Responsive Design:** The app is designed to work seamlessly on both desktop and mobile devices.
 
-# Installation
+## Installation
 
 1. Clone the repository: `git clone https://github.com/ZahariBakov/My-Car-Care`
 2. Navigate to the project directory: `cd car-care-app`
@@ -27,7 +27,7 @@ The Car Care App is a Django-based web application designed to help users manage
 7. Create a superuser: `python manage.py createsuperuser`
 8. Start the development server: `python manage.py runserver`
 
-Usage
+## Usage
 
 1. Access the admin panel by visiting `http://localhost:8000/admin/` and log in with your superuser account.
 2. Add vehicles and maintenance tasks through the admin panel.
@@ -37,7 +37,7 @@ Usage
 6. Master user group can edit or delete all car and maintenance tasks.
 
 
-Contributing
+## Contributing
 
 Contributions are welcome! If you find a bug or want to add a new feature, follow these steps:
 
@@ -47,11 +47,11 @@ Contributions are welcome! If you find a bug or want to add a new feature, follo
 4. Push to the branch: `git push origin feature-name`
 5. Create a pull request with a description of your changes.
 
-License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 
-Acknowledgements
+## Acknowledgements
 
 - [Django](https://www.djangoproject.com/) - The web framework for perfectionists with deadlines.
 - [Font Awesome](https://fontawesome.com/) - The iconic SVG, font, and CSS toolkit.
