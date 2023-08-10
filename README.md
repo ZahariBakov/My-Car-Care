@@ -1,9 +1,9 @@
 # My-Car-Care
-Final exam project.
 
 The Car Care App is a Django-based web application designed to help users manage and track maintenance tasks for their vehicles. Whether you're a car enthusiast or simply want to keep your vehicle in optimal condition, this app provides an organized way to stay on top of maintenance needs.
 
-<img src="https://github.com/ZahariBakov/My-Car-Care/blob/main/my_car_care_project/imgaes/Screenshot%202023-08-10%20154025.png" alt="Index page" style="width: 700px/>
+![Screenshot](https://github.com/ZahariBakov/My-Car-Care/blob/main/my_car_care_project/imgaes/Screenshot%202023-08-10%20154025.png)
+
 
 ## Features
 
@@ -52,6 +52,6 @@ This project is licensed under the [MIT License](LICENSE).
 ## Acknowledgements
 
 - [Django](https://www.djangoproject.com/) - The web framework for perfectionists with deadlines.
+- [PostgreSQL](https://www.postgresql.org/) - An open-source relational database management system.
+- [Docker](https://www.docker.com/) - A platform for developing, shipping, and running applications using containers.
 - [Font Awesome](https://fontawesome.com/) - The iconic SVG, font, and CSS toolkit.
-
-
