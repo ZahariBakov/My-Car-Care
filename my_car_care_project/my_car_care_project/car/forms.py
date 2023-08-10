@@ -10,8 +10,6 @@ class CarAddForm(forms.ModelForm):
 
 
 class CarEditForm(forms.ModelForm):
-    date_of_purchase = forms.DateField(input_formats=['%d.%m.%y'])
-
     class Meta:
         model = Car
         fields = '__all__'

@@ -6,8 +6,6 @@ from my_car_care_project.accounts.validators import validate_only_alphabetical
 
 
 class Profile(auth_models.AbstractUser):
-    USERNAME_MAX_LEN = 20
-    USERNAME_MIN_LEN = 2
     FIRST_NAME_MAX_LEN = 30
     FIRST_NAME_MIN_LEN = 2
     LAST_NAME_MAX_LEN = 30
