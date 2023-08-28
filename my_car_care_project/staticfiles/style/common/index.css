@@ -64,11 +64,11 @@
 /* Responsive styling */
 @media only screen and (max-width: 768px) {
     .main-content {
-        height: auto; /* Allow height to adjust based on content */
+        height: auto;
     }
 
     .hero {
-        height: 300px; /* Adjust the height for better visibility on smaller screens */
+        height: 300px;
     }
 
     .hero-content h1 {
@@ -85,12 +85,12 @@
     }
 
     .features {
-        padding: 20px 0; /* Adjust padding for better spacing on smaller screens */
-        flex-direction: column; /* Stack features vertically on small screens */
+        padding: 20px 0;
+        flex-direction: column;
     }
 
     .feature {
-        margin: 20px 0; /* Add spacing between features */
+        margin: 20px 0;
     }
 
     .feature i {
@@ -103,7 +103,6 @@
 
     .feature p {
         font-size: 14px;
-        margin-bottom: 20px; /* Reduce bottom margin for better spacing */
+        margin-bottom: 20px;
     }
 }
-

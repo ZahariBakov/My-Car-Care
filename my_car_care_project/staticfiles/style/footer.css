@@ -47,18 +47,18 @@ i {
     footer {
         color: #333;
         padding: 20px;
-        height: auto; /* Allow height to adjust based on content */
+        height: auto;
         display: flex;
-        flex-direction: column; /* Change to column layout on small screens */
-        justify-content: center; /* Center content vertically */
-        align-items: center; /* Center content horizontally */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .footer-content {
         display: flex;
-        flex-direction: column; /* Change to column on small screens */
-        justify-content: center; /* Center content vertically */
-        align-items: center; /* Center content horizontally */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .footer-content h3 {
@@ -72,7 +72,7 @@ i {
     .footer-left p,
     .footer-right p {
         margin: 0;
-        text-align: center; /* Center text in columns */
+        text-align: center;
     }
 
     .left-footer-side-paragraph {
